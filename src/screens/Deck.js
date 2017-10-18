@@ -10,7 +10,7 @@ class Deck extends Component {
       <View
         style={{
           flex: 1,
-          backgroundColor: '#0000FF',
+          backgroundColor: color.blue,
           padding: 5,
           justifyContent: 'center',
           alignItems: 'center'
