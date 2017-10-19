@@ -2,8 +2,8 @@ export default {
   decks: [
     {
       key: '1',
-      name: 'Deck name 1',
-      description: 'Deck description 1',
+      name: 'Deck 1 Name',
+      description: 'Deck  1 Description',
       cards: [
         {
           question: 'Question 1',
@@ -21,8 +21,8 @@ export default {
     },
     {
       key: '2',
-      name: 'Deck name 2',
-      description: 'Deck description 2',
+      name: 'Deck 2 Name',
+      description: 'Deck 2 Description',
       cards: [
         {
           question: 'Question 2',
@@ -32,8 +32,8 @@ export default {
     },
     {
       key: '3',
-      name: 'Deck name 3',
-      description: 'Deck description 3',
+      name: 'Deck 3 Name',
+      description: 'Deck 3 Description',
       cards: [
         {
           question: 'Question 1',

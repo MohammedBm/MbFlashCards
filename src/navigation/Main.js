@@ -1,25 +1,14 @@
 import React from 'react'
-import {TabNavigator} from 'react-navigation'
-import {FontAwesome} from '@expo/vector-icons'
-import DeckList from '../screens/DeckList'
-import AddDeck from '../screens/AddDeck'
-import Deck from '../screens/Deck'
+import { TabNavigator } from 'react-navigation'
+import { FontAwesome } from '@expo/vector-icons'
+import DeckNavigation from './DeckNavigation'
+import NewDeckScreen from '../screens/NewDeckScreen'
 import { color } from '../utils/colors'
 
 const Main = TabNavigator(
   {
-    AddDeck: {
-      screen: AddDeck,
-      navigationOptions: {
-        title: 'Add Deck',
-        tabBarLabel: 'Add Deck',
-        tabBarIcon: ({tintColor}) => (
-          <FontAwesome name='pencil' size={30} color={tintColor} />
-        )
-      }
-    },
     DeckList: {
-      screen: DeckList,
+      screen: DeckNavigation,
       navigationOptions: {
         title: 'Deck List',
         tabBarLabel: 'Deck List',
@@ -28,13 +17,13 @@ const Main = TabNavigator(
         )
       }
     },
-    Deck: {
-      screen: Deck,
+    AddDeck: {
+      screen: NewDeckScreen,
       navigationOptions: {
-        title: 'Deck',
-        tabBarLabel: 'Deck',
+        title: 'Add Deck',
+        tabBarLabel: 'Add Deck',
         tabBarIcon: ({tintColor}) => (
-          <FontAwesome name='vcard-o' size={30} color={tintColor} />
+          <FontAwesome name='pencil' size={30} color={tintColor} />
         )
       }
     }
