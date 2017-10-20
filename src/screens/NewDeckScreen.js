@@ -12,8 +12,7 @@ import { MainButton } from '../components/Buttons'
 
 class NewDeckScreen extends Component {
   state = {
-    name: '',
-    description: ''
+    name: ''
   }
 
   render () {
@@ -26,16 +25,6 @@ class NewDeckScreen extends Component {
             onChangeText={name => this.setState({name})}
             value={this.state.name}
             keyboardAppearance='dark'
-          />
-        </View>
-        <View style={styles.inputWrapper}>
-          <Text style={styles.label}>Description</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={description => this.setState({description})}
-            value={this.state.description}
-            keyboardAppearance='dark'
-            multiline
           />
         </View>
         <MainButton onPress={() => {}} title='Create Deck' />

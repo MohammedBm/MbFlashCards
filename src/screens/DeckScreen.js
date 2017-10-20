@@ -1,8 +1,9 @@
-import React, {Component} from 'react'
-import {Text, View, Button, StyleSheet} from 'react-native'
+import React, { Component } from 'react'
+import { Text, View, Button, StyleSheet } from 'react-native'
 import { color } from '../utils/colors'
-import {MainButton, SecondaryButton} from '../components/Buttons'
+import { MainButton, SecondaryButton } from '../components/Buttons'
 import PropTypes from 'prop-types'
+import {getDeck} from '../data'
 
 class DeckScreen extends React.Component {
   static propTypes = {
@@ -11,20 +12,23 @@ class DeckScreen extends React.Component {
 
   render () {
     const {state, navigate} = this.props.navigation
-    const {name, description, cards} = state.params.deck
-    const navigateToQuiz = () => navigate('Quiz', {name})
-    const navigateToNewCard = () => navigate('NewCard', {name})
+    const deck = getDeck(state.params.title)
+    const {title, questions} = deck
+    const navigateToQuiz = () => navigate('Quiz', {title})
+    const navigateToNewCard = () => navigate('NewCard', {title})
 
     return (
       <View style={styles.wrapper}>
         <View style={styles.deckDetails}>
-          <View style={styles.descriptionView}>
-            <Text style={styles.descriptionText}>{description}</Text>
+          <View style={styles.titleView}>
+            <Text style={styles.titleText}>{title}</Text>
           </View>
           <View>
             <Text style={styles.cardCountText}>
-              <Text style={styles.cardCountNumber}>{cards.length}</Text>{' '}
-              <Text>Card{cards.length === 1 ? '' : 's'} in Deck</Text>
+              <Text style={styles.cardCountNumber}>
+                {questions.length}
+              </Text>{' '}
+              <Text>Card{questions.length === 1 ? '' : 's'}</Text>
             </Text>
           </View>
         </View>
@@ -59,10 +63,10 @@ const styles = StyleSheet.create({
   deckDetails: {
     padding: 30
   },
-  descriptionView: {
+  titleView: {
     marginBottom: 15
   },
-  descriptionText: {
+  titleText: {
     fontSize: 28,
     color: color.grey
   },

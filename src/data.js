@@ -1,49 +1,54 @@
-export default {
-  decks: [
-    {
-      key: '1',
-      name: 'Deck 1 Name',
-      description: 'Deck  1 Description',
-      cards: [
+const data = {
+  decks: {
+    React: {
+      title: 'React',
+      questions: [
         {
-          question: 'Question 1',
-          answer: 'Answer 1'
+          question: 'What is React?',
+          answer: 'A library for managing user interfaces'
         },
         {
-          question: 'Question 2',
-          answer: 'Answer 2'
-        },
-        {
-          question: 'Question 3',
-          answer: 'Answer 3'
+          question: 'Where do you make Ajax requests in React?',
+          answer: 'The componentDidMount lifecycle event'
         }
       ]
     },
-    {
-      key: '2',
-      name: 'Deck 2 Name',
-      description: 'Deck 2 Description',
-      cards: [
+    JavaScript: {
+      title: 'JavaScript',
+      questions: [
         {
-          question: 'Question 2',
-          answer: 'Answer 2'
+          question: 'What is a closure?',
+          answer:
+            'The combination of a function and the lexical environment within which that function was declared.'
         }
       ]
     },
-    {
-      key: '3',
-      name: 'Deck 3 Name',
-      description: 'Deck 3 Description',
-      cards: [
+    Ruby: {
+      title: 'Ruby',
+      questions: [
         {
-          question: 'Question 1',
-          answer: 'Answer 1'
+          question: 'What is a class?',
+          answer:
+            'classes hold data, have methods that interact with that data, and are used to instantiate objects.'
         },
         {
-          question: 'Question 2',
-          answer: 'Answer 2'
+          question: 'What is an object?',
+          answer:
+            'an Object hold data, have methods that interact with that data, and are used to instantiate objects.'
+
         }
       ]
+
     }
-  ]
+  }
+}
+
+export default data
+
+export const getDecks = () => {
+  return Object.values(data.decks).map((deck, key) => ({...deck, key}))
+}
+
+export const getDeck = id => {
+  return data.decks[id]
 }

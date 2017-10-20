@@ -12,10 +12,16 @@ class DeckView extends Component {
 
   render () {
     const {deck, navigate} = this.props
+    const {title, questions} = deck
     return (
-      <TouchableHighlight onPress={() => navigate('Deck', {deck})}>
+      <TouchableHighlight onPress={() => navigate('Deck', {title})}>
         <View style={styles.wrapper}>
-          <Text style={styles.header}>{deck.name}</Text>
+          <View>
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.cardCount}>
+              {questions.length} Card{questions.length === 1 ? '' : 's'}
+            </Text>
+          </View>
           <FontAwesome name={'angle-right'} style={styles.icon} />
         </View>
       </TouchableHighlight>
@@ -29,16 +35,20 @@ const styles = StyleSheet.create({
   wrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     paddingVertical: 7.5,
     paddingHorizontal: 15,
     marginBottom: 15,
     borderRadius: 5,
     backgroundColor: color.darkGrey
   },
-  header: {
-    fontSize: 28,
+  title: {
+    fontSize: 30,
     color: color.grey,
-    backgroundColor: 'transparent'
+    marginBottom: 5
+  },
+  cardCount: {
+    color: color.grey
   },
   icon: {
     color: color.orange,

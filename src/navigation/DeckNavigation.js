@@ -16,14 +16,14 @@ const DeckNavigation = StackNavigator(
     },
     Deck: {
       screen: DeckScreen,
-      path: 'decks/:name',
+      path: 'decks/:title',
       navigationOptions: ({navigation}) => ({
-        title: `${navigation.state.params.deck.name}`
+        title: `${navigation.state.params.title}`
       })
     },
     NewCard: {
       screen: NewCardScreen,
-      path: 'decks/:name/new',
+      path: 'decks/:title/new',
       navigationOptions: () => ({
         title: `New Card`
       }),
@@ -31,7 +31,7 @@ const DeckNavigation = StackNavigator(
     },
     Quiz: {
       screen: QuizScreen,
-      path: 'decks/:name/quiz',
+      path: 'decks/:title/quiz',
       navigationOptions: () => ({
         title: `Quiz`
       })

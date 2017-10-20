@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { View, FlatList, StyleSheet } from 'react-native'
 import DeckView from '../components/DeckView'
-import data from '../data'
+import { getDecks } from '../data'
 import { color } from '../utils/colors'
 
 class DeckListScreen extends Component {
@@ -15,7 +15,7 @@ class DeckListScreen extends Component {
     return (
       <View style={styles.wrapper}>
         <FlatList
-          data={[...data.decks]}
+          data={getDecks()}
           renderItem={({item}) => (
             <DeckView deck={item} navigate={navigate} />
           )}
