@@ -1,17 +1,46 @@
-import { StackNavigator } from 'react-navigation'
-import { color } from '../utils/colors'
-import Main from './Main'
+import React from 'react'
+import {TabNavigator} from 'react-navigation'
+import {FontAwesome} from '@expo/vector-icons'
+import DeckNavigation from './DeckNavigation'
+import NewDeckScreen from '../screens/NewDeckScreen'
+import {color} from '../utils/colors'
 
-const AppNavigation = StackNavigator(
+const AppNavigation = TabNavigator(
   {
-    Index: {screen: Main}
+    DeckList: {
+      screen: DeckNavigation,
+      navigationOptions: {
+        title: 'Deck List',
+        tabBarLabel: 'Deck List',
+        tabBarIcon: ({tintColor}) => (
+          <FontAwesome name='clone' size={30} color={tintColor} />
+        )
+      }
+    },
+    AddDeck: {
+      screen: NewDeckScreen,
+      navigationOptions: {
+        title: 'Add Deck',
+        tabBarLabel: 'Add Deck',
+        tabBarIcon: ({tintColor}) => (
+          <FontAwesome name='pencil' size={30} color={tintColor} />
+        )
+      }
+    }
   },
   {
-    initialRouteName: 'Index',
-    navigationOptions: {
-      headerTintColor: color.orange,
-      headerStyle: {
-        backgroundColor: color.darkBlue
+    animationEnabled: true,
+    initialRouteName: 'DeckList',
+    swipeEnabled: true,
+    tabBarOptions: {
+      activeTintColor: color.orange,
+      style: {
+        height: 56,
+        backgroundColor: color.darkBlue,
+        shadowColor: 'rgba(0, 0, 0, 0.24)',
+        shadowOffset: {width: 0, height: 3},
+        shadowRadius: 6,
+        shadowOpacity: 1
       }
     }
   }
