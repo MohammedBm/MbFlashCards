@@ -5,7 +5,7 @@ import { color } from '../utils/colors'
 import PropTypes from 'prop-types'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { connect } from 'react-redux'
-import { addCardToDeck } from '../redux/actions'
+import { addCardToDeck } from '../utils/actions'
 import { MainButton } from '../components/Buttons'
 
 
@@ -36,7 +36,7 @@ class NewCardScreen extends Component {
 
     return (
       <KeyboardAwareScrollView
-        style={{ backgroundColor: color.blue }}
+        style={{ backgroundColor: color.darkBlue }}
         contentContainerStyle={styles.wrapper}
         resetScrollToCoords={{ x: 0, y: 0 }}
       >
@@ -77,7 +77,7 @@ export default connect(null, { addCardToDeck })(NewCardScreen)
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.blue,
+    backgroundColor: color.darkBlue,
     padding: 30,
     justifyContent: 'center',
     alignItems: 'stretch'
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 28,
     paddingBottom: 5,
-    color: color.darkBlue,
+    color: color.lightBlue,
     backgroundColor: 'transparent'
   },
   inputWrapper: {

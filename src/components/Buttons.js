@@ -76,23 +76,23 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   mainButton: {
-    backgroundColor: color.orange
+    backgroundColor: color.twitter
   },
   mainButtonIcon: {
     marginRight: 10,
-    color: color.blue
+    color: color.darkBlue
   },
   mainButtonText: {
-    color: color.blue
+    color: color.darkBlue
   },
   buttonSecondary: {
     backgroundColor: 'transparent'
   },
   secondaryButtonIcon: {
     marginRight: 10,
-    color: color.orange
+    color: color.twitter
   },
   secondaryButtonText: {
-    color: color.orange
+    color: color.twitter
   }
 })

@@ -4,8 +4,8 @@ import { color } from '../utils/colors'
 import { MainButton } from '../components/Buttons'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { createNewDeck } from '../redux/actions/'
-import { getDeckIds } from '../redux/helpers'
+import { createNewDeck } from '../utils/actions'
+import { getDeckIds } from '../utils/helpers'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 class NewDeckScreen extends Component {
@@ -33,7 +33,7 @@ class NewDeckScreen extends Component {
 
     return (
       <KeyboardAwareScrollView
-        style={{ backgroundColor: color.blue }}
+        style={{ backgroundColor: color.darkBlue }}
         contentContainerStyle={styles.wrapper}
         resetScrollToCoords={{ x: 0, y: 0 }}
       >
@@ -47,7 +47,7 @@ class NewDeckScreen extends Component {
             returnKeyType='done'
           />
         </View>
-        
+
         {duplicateName && (
           <View style={styles.errorWrapper}>
             <Text style={styles.errorText}>
@@ -69,13 +69,14 @@ class NewDeckScreen extends Component {
     )
   }
 }
+
 const mapStateToProps = ({ decks }) => ({ deckIds: getDeckIds(decks) })
 export default connect(mapStateToProps, { createNewDeck })(NewDeckScreen)
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.blue,
+    backgroundColor: color.darkBlue,
     padding: 30,
     justifyContent: 'center',
     alignItems: 'stretch'
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingVertical: 7.5,
     paddingHorizontal: 15,
-    backgroundColor: color.darkGrey,
+    backgroundColor: color.inputGrey,
     color: color.grey
   },
   errorWrapper: {

@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     color: color.grey
   },
   icon: {
-    color: color.orange,
+    color: color.twitter,
     fontSize: 28
   },
   touchableHighlight: {

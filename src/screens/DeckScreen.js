@@ -4,7 +4,7 @@ import { color } from '../utils/colors'
 import { MainButton, SecondaryButton } from '../components/Buttons'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getDeck } from '../redux/helpers'
+import { getDeck } from '../utils/helpers'
 
 class DeckScreen extends React.Component {
   static propTypes = {
@@ -61,7 +61,7 @@ export default connect(mapStateToProps)(DeckScreen)
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.blue,
+    backgroundColor: color.darkBlue,
     padding: 5,
     justifyContent: 'space-between',
     alignItems: 'stretch'

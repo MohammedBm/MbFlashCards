@@ -4,7 +4,7 @@ import { View, FlatList, StyleSheet } from 'react-native'
 import DeckView from '../components/DeckView'
 import { connect } from 'react-redux'
 import { color } from '../utils/colors'
-import { getDecks } from '../redux/helpers'
+import { getDecks } from '../utils/helpers'
 
 class DeckListScreen extends Component {
   static propTypes = {
@@ -38,7 +38,7 @@ export default connect(mapStateToProps)(DeckListScreen)
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.blue,
+    backgroundColor: color.darkBlue,
     paddingVertical: 30,
     paddingHorizontal: 15
   }
