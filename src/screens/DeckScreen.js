@@ -16,6 +16,7 @@ class DeckScreen extends React.Component {
     const { title, questions } = this.props.deck
     const navigateToQuiz = () => navigate('Quiz', {title})
     const navigateToNewCard = () => navigate('NewCard', {title})
+    const disabled = questions.length < 1
 
     return (
       <View style={styles.wrapper}>
@@ -43,6 +44,7 @@ class DeckScreen extends React.Component {
             title={'Start Quiz'}
             icon={'rocket'}
             onPress={navigateToQuiz}
+            disabled={disabled}
           />
         </View>
       </View>

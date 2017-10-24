@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import { Text, View, TouchableHighlight, StyleSheet } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import { color } from '../utils/colors'
+import glamorous from 'glamorous-native'
 
 export class MainButton extends Component {
   static PropTypes = buttonPropTypes
   render(){
     const { icon, title, onPress, ...props } = this.props
     return(
-      <TouchableHighlight style={styles.wrapper} onPress={onPress} {...props}>
+      <MainButtonEl onPress={onPress} {...props}>
         <View style={[styles.button, styles.mainButton]}>
           {icon != null && (
             <FontAwesome
@@ -20,7 +21,7 @@ export class MainButton extends Component {
           )}
           <Text style={styles.mainButtonText}>{title}</Text>
         </View>
-      </TouchableHighlight>
+      </MainButtonEl>
     )
   }
 }
@@ -30,7 +31,7 @@ export class SecondaryButton extends Component {
   render () {
     const {icon, title, onPress, ...props} = this.props
     return (
-      <TouchableHighlight style={styles.wrapper} onPress={onPress} {...props}>
+      <SecondaryButtonEl onPress={onPress} {...props}>      
         <View style={[styles.button, styles.buttonSecondary]}>
           {icon != null && (
             <FontAwesome
@@ -41,7 +42,7 @@ export class SecondaryButton extends Component {
           )}
           <Text style={styles.secondaryButtonText}>{title}</Text>
         </View>
-      </TouchableHighlight>
+      </SecondaryButtonEl>
     )
   }
 }
@@ -52,10 +53,19 @@ const buttonPropTypes = {
   icon: PropTypes.string
 }
 
+const buttonElStyles = { alignSelf: 'center' }
+const buttonElDisabledStyles = { opacity: 0.4 }
+
+const MainButtonEl = glamorous(TouchableHighlight)(
+  buttonElStyles,
+  ({ disabled }) => disabled && buttonElDisabledStyles
+)
+const SecondaryButtonEl = glamorous(TouchableHighlight)(
+  buttonElStyles,
+  ({ disabled }) => disabled && buttonElDisabledStyles
+)
+
 const styles = StyleSheet.create({
-  wrapper: {
-    alignSelf: 'center'
-  },
   button: {
     flexDirection: 'row',
     justifyContent: 'space-around',

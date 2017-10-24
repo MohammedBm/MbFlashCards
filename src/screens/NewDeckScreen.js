@@ -5,17 +5,39 @@ import {
   Text,
   TextInput,
   Button,
-  StyleSheet
+  StyleSheet,
+  Keyboard
 } from 'react-native'
 import { color } from '../utils/colors'
 import { MainButton } from '../components/Buttons'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { createNewDeck } from '../redux/actions/'
+import { getDeckIds } from '../redux/helpers'
 
 class NewDeckScreen extends Component {
-  state = {
-    name: ''
+  static propTypes = {
+    navigation: PropTypes.object.isRequired
+  }
+  constructor() {
+    super()
+    this.state = { name: '' }
   }
 
+  onSubmit = () => {
+    Keyboard.dismiss()
+    const { name } = this.state
+    this.setState({ name: '' }, () => {
+      this.props.createNewDeck({ name: name })
+      this.props.navigation.navigate('Deck', { title: name })
+    })
+  } 
+
   render () {
+    const empty = this.state.name === ''
+    const duplicateName = this.props.deckIds.includes(this.state.name)
+    const disabled = empty || duplicateName
+
     return (
       <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
         <View style={styles.inputWrapper}>
@@ -27,13 +49,30 @@ class NewDeckScreen extends Component {
             keyboardAppearance='dark'
           />
         </View>
-        <MainButton onPress={() => {}} title='Create Deck' />
+        {duplicateName && (
+          <View style={styles.errorWrapper}>
+            <Text style={styles.errorText}>
+              Deck with name `<Text style={{ fontWeight: '600' }}>
+                {this.state.name}
+              </Text>` already exists.
+            </Text>
+            <Text style={styles.errorText}>Please choose another name</Text>
+          </View>
+        )}
+
+        <MainButton
+          onPress={this.onSubmit}
+          title='Create Deck'
+          disabled={disabled}
+        />
+
+
       </KeyboardAvoidingView>
     )
   }
 }
-
-export default NewDeckScreen
+const mapStateToProps = ({ decks }) => ({ deckIds: getDeckIds(decks) })
+export default connect(mapStateToProps, { createNewDeck })(NewDeckScreen)
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -58,5 +97,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     backgroundColor: color.darkGrey,
     color: color.grey
+  },
+  errorWrapper: {
+    paddingVertical: 7.5,
+    paddingHorizontal: 15,
+    marginBottom: 20
+  },
+  errorText: {
+    fontSize: 18,
+    textAlign: 'center',
+    color: color.orange
   }
 })
