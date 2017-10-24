@@ -3,7 +3,8 @@ import { Text, View, Button, StyleSheet } from 'react-native'
 import { color } from '../utils/colors'
 import { MainButton, SecondaryButton } from '../components/Buttons'
 import PropTypes from 'prop-types'
-import {getDeck} from '../data'
+import { connect } from 'react-redux'
+import { getDeck } from '../redux/helpers'
 
 class DeckScreen extends React.Component {
   static propTypes = {
@@ -11,9 +12,8 @@ class DeckScreen extends React.Component {
   }
 
   render () {
-    const {state, navigate} = this.props.navigation
-    const deck = getDeck(state.params.title)
-    const {title, questions} = deck
+    const { navigate } = this.props.navigation
+    const { title, questions } = this.props.deck
     const navigateToQuiz = () => navigate('Quiz', {title})
     const navigateToNewCard = () => navigate('NewCard', {title})
 
@@ -50,7 +50,11 @@ class DeckScreen extends React.Component {
   }
 }
 
-export default DeckScreen
+const mapStateToProps = ({ decks }, props) => {
+  return { deck: getDeck(decks, props.navigation.state.params.title) }
+}
+
+export default connect(mapStateToProps)(DeckScreen)
 
 const styles = StyleSheet.create({
   wrapper: {

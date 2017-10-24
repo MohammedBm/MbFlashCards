@@ -7,14 +7,14 @@ import { color } from '../utils/colors'
 class DeckView extends Component {
   static propTypes = {
     deck: PropTypes.object.isRequired,
-    navigate: PropTypes.func.isRequired
+    toDeck: PropTypes.func.isRequired
   }
 
   render () {
-    const {deck, navigate} = this.props
+    const {deck, toDeck} = this.props
     const {title, questions} = deck
     return (
-      <TouchableHighlight onPress={() => navigate('Deck', {title})}>
+      <TouchableHighlight onPress={toDeck} style={styles.touchableHighlight}>      
         <View style={styles.wrapper}>
           <View>
             <Text style={styles.title}>{title}</Text>
@@ -53,5 +53,9 @@ const styles = StyleSheet.create({
   icon: {
     color: color.orange,
     fontSize: 28
-  }
+  },
+  touchableHighlight: {
+    marginBottom: 15,
+    borderRadius: 5
+  },
 })

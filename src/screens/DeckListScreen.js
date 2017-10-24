@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { View, FlatList, StyleSheet } from 'react-native'
 import DeckView from '../components/DeckView'
-import { getDecks } from '../data'
+import { connect } from 'react-redux'
 import { color } from '../utils/colors'
+import { getDecks } from '../redux/helpers'
 
 class DeckListScreen extends Component {
   static propTypes = {
@@ -11,13 +12,18 @@ class DeckListScreen extends Component {
   }
 
   render () {
-    const {navigate} = this.props.navigation
+    const { decks, navigation } = this.props
+    const { navigate } = navigation
+
     return (
       <View style={styles.wrapper}>
         <FlatList
-          data={getDecks()}
+          data={decks}
           renderItem={({item}) => (
-            <DeckView deck={item} navigate={navigate} />
+            <DeckView
+              deck={item}
+              toDeck={() => navigate('Deck', { title: item.title })}
+            />
           )}
         />
       </View>
@@ -25,7 +31,9 @@ class DeckListScreen extends Component {
   }
 }
 
-export default DeckListScreen
+const mapStateToProps = ({ decks }) => ({ decks: getDecks(decks) })
+
+export default connect(mapStateToProps)(DeckListScreen)
 
 const styles = StyleSheet.create({
   wrapper: {
