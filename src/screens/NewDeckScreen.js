@@ -1,19 +1,12 @@
 import React, { Component } from 'react'
-import {
-  View,
-  KeyboardAvoidingView,
-  Text,
-  TextInput,
-  Button,
-  StyleSheet,
-  Keyboard
-} from 'react-native'
+import { View, Text, TextInput, StyleSheet, Keyboard } from 'react-native'
 import { color } from '../utils/colors'
 import { MainButton } from '../components/Buttons'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { createNewDeck } from '../redux/actions/'
 import { getDeckIds } from '../redux/helpers'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 class NewDeckScreen extends Component {
   static propTypes = {
@@ -39,7 +32,11 @@ class NewDeckScreen extends Component {
     const disabled = empty || duplicateName
 
     return (
-      <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
+      <KeyboardAwareScrollView
+        style={{ backgroundColor: color.blue }}
+        contentContainerStyle={styles.wrapper}
+        resetScrollToCoords={{ x: 0, y: 0 }}
+      >
         <View style={styles.inputWrapper}>
           <Text style={styles.label}>Name</Text>
           <TextInput
@@ -47,8 +44,10 @@ class NewDeckScreen extends Component {
             onChangeText={name => this.setState({name})}
             value={this.state.name}
             keyboardAppearance='dark'
+            returnKeyType='done'
           />
         </View>
+        
         {duplicateName && (
           <View style={styles.errorWrapper}>
             <Text style={styles.errorText}>
@@ -66,8 +65,7 @@ class NewDeckScreen extends Component {
           disabled={disabled}
         />
 
-
-      </KeyboardAvoidingView>
+      </KeyboardAwareScrollView>
     )
   }
 }
