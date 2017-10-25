@@ -1,5 +1,18 @@
+
 {
   "expo": {
-    "sdkVersion": "21.0.0"
+    "sdkVersion": "21.0.0",
+    "orientation": "portrait",
+    "name": "MbFlashCards",
+    "description": "Have your FlashCards everyWhere",
+    "slug": "MbFlashCards",
+    "version": "1.0",
+    "icon": "https://i.imgur.com/TlJLeQy.png",
+    "notification": {
+      "icon": "https://i.imgur.com/ymIaQ2m.png"
+    },
+    "ios": {
+      "bundleIdentifier": "org.udacicards.exp"
+    }
   }
 }

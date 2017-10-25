@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, TextInput, Keyboard } from 'react-native'
-import Content from '../components/Content'
 import { color } from '../utils/colors'
 import PropTypes from 'prop-types'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'

@@ -4,6 +4,7 @@ import {FontAwesome} from '@expo/vector-icons'
 import DeckNavigation from './DeckNavigation'
 import NewDeckScreen from '../screens/NewDeckScreen'
 import {color} from '../utils/colors'
+import SettingScreen from '../screens/SettingScreen'
 
 const AppNavigation = TabNavigator(
   {
@@ -24,6 +25,16 @@ const AppNavigation = TabNavigator(
         tabBarLabel: 'Add Deck',
         tabBarIcon: ({tintColor}) => (
           <FontAwesome name='pencil' size={30} color={tintColor} />
+        )
+      }
+    },
+    Setting: {
+      screen: SettingScreen,
+      navigationOptions: {
+        title: 'Settings',
+        tabBarLabel: 'Settings',
+        tabBarIcon: ({ tintColor }) => (
+          <FontAwesome name='sliders' size={30} color={tintColor} />
         )
       }
     }

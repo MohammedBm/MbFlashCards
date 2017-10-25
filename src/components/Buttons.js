@@ -55,15 +55,20 @@ const buttonPropTypes = {
 
 const buttonElStyles = { alignSelf: 'center' }
 const buttonElDisabledStyles = { opacity: 0.4 }
+const buttonElStackStyles = { alignSelf: 'stretch', marginBottom: 20 }
 
 const MainButtonEl = glamorous(TouchableHighlight)(
   buttonElStyles,
-  ({ disabled }) => disabled && buttonElDisabledStyles
+  ({ disabled }) => disabled && buttonElDisabledStyles,
+  ({ stackButton }) => stackButton && buttonElStackStyles
 )
+
 const SecondaryButtonEl = glamorous(TouchableHighlight)(
   buttonElStyles,
-  ({ disabled }) => disabled && buttonElDisabledStyles
+  ({ disabled }) => disabled && buttonElDisabledStyles,
+  ({ stackButton }) => stackButton && buttonElStackStyles
 )
+
 
 const styles = StyleSheet.create({
   button: {
@@ -72,8 +77,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 5,
     paddingVertical: 10,
-    paddingHorizontal: 20,
-    alignSelf: 'center'
+    paddingHorizontal: 20
   },
   mainButton: {
     backgroundColor: color.twitter

@@ -4,6 +4,7 @@ import DeckListScreen from '../screens/DeckListScreen'
 import DeckScreen from '../screens/DeckScreen'
 import NewCardScreen from '../screens/NewCardScreen'
 import QuizScreen from '../screens/QuizScreen'
+import SettingScreen from '../screens/SettingScreen'
 
 const DeckNavigation = StackNavigator(
   {
@@ -18,7 +19,7 @@ const DeckNavigation = StackNavigator(
       screen: DeckScreen,
       path: 'decks/:title',
       navigationOptions: ({navigation}) => ({
-        title: `${navigation.state.params.title}`
+        title: `Preview`
       })
     },
     NewCard: {
@@ -32,10 +33,10 @@ const DeckNavigation = StackNavigator(
     Quiz: {
       screen: QuizScreen,
       path: 'decks/:title/quiz',
-      navigationOptions: () => ({
-        title: `Quiz`
+      navigationOptions: ({ navigation}) => ({
+        title: `${navigation.state.params.title} Quiz`
       })
-    }
+    },
   },
   {
     initialRouteName: 'DeckList',

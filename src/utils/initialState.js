@@ -4,11 +4,11 @@ export default {
     questions: [
       {
         question: 'What is React?',
-        answer: 'A library for managing user interfaces'
+        answer: 'React is a declarative, efficient, and flexible JavaScript library for building user interfaces.'
       },
       {
-        question: 'Where do you make Ajax requests in React?',
-        answer: 'The componentDidMount lifecycle event'
+        question: 'What is State?',
+        answer: 'State is the place where the data comes from. We should always try to make our state as simple as possible and minimize the number of stateful components. If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them.'
       }
     ]
   },
@@ -16,10 +16,50 @@ export default {
     title: 'JavaScript',
     questions: [
       {
-        question: 'What is a closure?',
+        question: 'What is a Callback function?',
         answer:
-        'The combination of a function and the lexical environment within which that function was declared.'
+        'A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.'
+      },
+      {
+        question: 'What is a Function',
+        answer: 'Functions are one of the fundamental building blocks in JavaScript. A function is a JavaScript procedure—a set of statements that performs a task or calculates a value. To use a function, you must define it somewhere in the scope from which you wish to call it.'
+      },
+      {
+        question: 'What is an Array?',
+        answer: 'An array is an ordered collection of data (either primitive or object depending upon the language). Arrays are used to store multiple values in a single variable. This is compared to a variable that can store only one value.'
+      }
+
+    ]
+  },
+  Ruby: {
+    title: 'Ruby',
+    questions: [
+      {
+        question: 'What is a Class?',
+        answer:
+        'classes hold data have methods that interact with that data, and are used to instantiate objects.'
+      },
+      {
+        question: 'What is an Object?',
+        answer:
+        'Object is the default root of all Ruby objects. Object inherits from BasicObject which allows creating alternate object hierarchies. Methods on Object are available to all classes unless explicitly overridden.'
       }
     ]
+  },
+  HTML: {
+    title: 'HTML & CSS',
+    questions: [
+      {
+        question: 'What is HTML?',
+        answer:
+        'HTML (HyperText Markup Language) is a descriptive language that specifies webpage structure.'
+      },
+      {
+        question: 'What is CSS?',
+        answer:
+        'Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.'
+      }
+    ]
+
   }
 }
