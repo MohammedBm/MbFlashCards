@@ -30,11 +30,13 @@ class NewCardScreen extends React.Component {
       >
       
         <MainButton
+        style = {styles.buttons}
           onPress={this.deleteAllDecks}
           title='Delete All Decks'
           stackButton
         />
         <MainButton
+          style={styles.buttons}
           onPress={this.restoreDefaultDecks}
           title='Restore Default Decks'
           stackButton
@@ -55,5 +57,9 @@ const styles = StyleSheet.create({
     padding: 30,
     justifyContent: 'center',
     alignItems: 'stretch'
+  },
+  buttons: {
+    marginTop: 20
   }
+
 })
