@@ -10,4 +10,11 @@ describe('App', () => {
     expect(app).toMatchSnapshot();
   });
 
+  it('contains a AppStatusBar', () => {
+    expect(app.find('AppStatusBar').exists()).tobe(true)
+  })
+
+  it('contains a AppNavigationBar', () => {
+    expect(app.find('AppNavigationBar').exists()).tobe(true)
+  })
 });

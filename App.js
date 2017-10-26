@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import AppNavigation from './src/navigation/AppNavigation'
 import AppStatusBar from './src/navigation/AppStatusBar'
 import { Provider } from 'react-redux'
