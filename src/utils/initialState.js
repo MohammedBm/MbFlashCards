@@ -46,4 +46,20 @@ export default {
       }
     ]
   },
+  HTML: {
+    title: 'HTML & CSS',
+    questions: [
+      {
+        question: 'What is HTML?',
+        answer:
+        'HTML (HyperText Markup Language) is a descriptive language that specifies webpage structure.'
+      },
+      {
+        question: 'What is CSS?',
+        answer:
+        'Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.'
+      }
+    ]
+
+  }
 }

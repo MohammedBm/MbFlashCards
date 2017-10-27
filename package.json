@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "enzyme-adapter-react-16": "^1.0.2",
     "jest-expo": "^21.0.2",
     "react-dom": "^16.0.0",
     "react-native-mock": "^0.3.1",
     "react-native-scripts": "1.5.0",
-    "react-test-renderer": "^16.0.0"
+    "react-test-renderer": "16.0.0-alpha.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -19,20 +18,13 @@
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "src/**/*.test.js",
-      "!src/index.js",
-      "!src/setupTests.js",
-      "!src/tempPolyfills.js"
-    ]
+    "preset": "jest-expo"
   },
   "dependencies": {
     "array-shuffle": "^1.0.1",
     "date-fns": "^1.29.0",
-    "enzyme": "^2.9.1",
     "expo": "^21.0.0",
-    "jest-cli": "20.0.4",
+    "glamorous-native": "^1.2.0",
     "prop-types": "^15.6.0",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.48.4",

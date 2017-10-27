@@ -82,7 +82,7 @@ class QuizScreen extends Component {
                 </View>
                 <View style={styles.buttonWrapper}>
                   <SecondaryButton onPress={this.reset} title='Start Again' />
-                  <MainButton onPress={this.goToDeck} title='Back to Deck' />
+                  <MainButton onPress={this.goToDeck} title='Got to Deck' />
                 </View>
               </View>
             )
