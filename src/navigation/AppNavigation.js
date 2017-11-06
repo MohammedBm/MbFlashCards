@@ -44,10 +44,10 @@ const AppNavigation = TabNavigator(
     initialRouteName: 'DeckList',
     swipeEnabled: true,
     tabBarOptions: {
-      activeTintColor: color.twitter,
+      activeTintColor: color.navigationColor,
       style: {
         height: 56,
-        backgroundColor: color.lightBlue,
+        backgroundColor: color.mainBackground,
         shadowColor: 'rgba(0, 0, 0, 0.24)',
         shadowOffset: {width: 0, height: 3},
         shadowRadius: 6,

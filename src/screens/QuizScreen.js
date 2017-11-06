@@ -133,7 +133,7 @@ export default connect(mapStateToProps)(QuizScreen)
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.darkBlue,
+    backgroundColor: color.mainBackground,
     padding: 5,
     justifyContent: 'center',
     alignItems: 'center'
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     right: 15
   },
   questionsRemainingText: {
-    color: color.grey
+    color: color.textBlue
   },
   section: {
     flex: 1,
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
-    color: color.orange,
+    color: color.buttonText,
     textAlign: 'center'
   },
   messageWrapper: {
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
   },
   message: {
     fontSize: 18,
-    color: color.grey,
+    color: color.textBlue,
     textAlign: 'center'
   },
   buttonWrapper: {

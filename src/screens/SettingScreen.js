@@ -25,7 +25,7 @@ class NewCardScreen extends React.Component {
   render() {
     return (
       <KeyboardAwareScrollView
-        style={{ backgroundColor: color.darkBlue }}
+        style={{ backgroundColor: color.mainBackground }}
         contentContainerStyle={styles.wrapper}
       >
 
@@ -53,7 +53,7 @@ export default connect(null, { deleteAllDecks, restoreDefaultDecks })(
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.darkBlue,
+    backgroundColor: color.mainBackground,
     padding: 30,
     justifyContent: 'center',
     alignItems: 'stretch'

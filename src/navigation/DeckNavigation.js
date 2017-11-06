@@ -41,9 +41,9 @@ const DeckNavigation = StackNavigator(
   {
     initialRouteName: 'DeckList',
     navigationOptions: {
-      headerTintColor: color.twitter,
+      headerTintColor: color.navigationColor,
       headerStyle: {
-        backgroundColor: color.lightBlue
+        backgroundColor: color.mainBackground
       }
     }
   }

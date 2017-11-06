@@ -38,7 +38,7 @@ export default connect(mapStateToProps)(DeckListScreen)
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.darkBlue,
+    backgroundColor: color.mainBackground,
     paddingVertical: 30,
     paddingHorizontal: 15
   }

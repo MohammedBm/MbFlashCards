@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   mainButton: {
-    backgroundColor: color.orange
+    backgroundColor: color.buttonText
   },
   mainButtonIcon: {
     marginRight: 10,
@@ -80,9 +80,9 @@ const styles = StyleSheet.create({
   },
   secondaryButtonIcon: {
     marginRight: 10,
-    color: color.orange
+    color: color.buttonText
   },
   secondaryButtonText: {
-    color: color.orange
+    color: color.buttonText
   }
 })

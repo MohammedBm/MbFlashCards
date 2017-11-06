@@ -33,7 +33,7 @@ class NewDeckScreen extends Component {
 
     return (
       <KeyboardAwareScrollView
-        style={{ backgroundColor: color.darkBlue }}
+        style={{ backgroundColor: color.mainBackground }}
         contentContainerStyle={styles.wrapper}
         resetScrollToCoords={{ x: 0, y: 0 }}
       >
@@ -76,7 +76,7 @@ export default connect(mapStateToProps, { createNewDeck })(NewDeckScreen)
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.darkBlue,
+    backgroundColor: color.mainBackground,
     padding: 30,
     justifyContent: 'center',
     alignItems: 'stretch'
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 24,
     paddingBottom: 10,
-    color: color.grey
+    color: color.textBlue
   },
   input: {
     fontSize: 20,
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     paddingVertical: 7.5,
     paddingHorizontal: 15,
     backgroundColor: color.inputGrey,
-    color: color.grey
+    color: color.textBlue
   },
   errorWrapper: {
     paddingVertical: 7.5,
@@ -105,6 +105,6 @@ const styles = StyleSheet.create({
   errorText: {
     fontSize: 18,
     textAlign: 'center',
-    color: color.orange
+    color: color.buttonText
   }
 })

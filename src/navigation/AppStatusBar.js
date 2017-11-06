@@ -8,7 +8,7 @@ class AppStatusBar extends Component {
     return (
       <View
         style={{
-          backgroundColor: color.lightBlue,
+          backgroundColor: color.mainBackground,
           height: Constants.statusBarHeight
         }}
       >

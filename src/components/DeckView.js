@@ -40,18 +40,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 15,
     borderRadius: 5,
-    backgroundColor: color.darkGrey
+    backgroundColor: color.lightGrey
   },
   title: {
     fontSize: 30,
-    color: color.grey,
+    color: color.textBlue,
     marginBottom: 5
   },
   cardCount: {
-    color: color.grey
+    color: color.textBlue
   },
   icon: {
-    color: color.twitter,
+    color: color.navigationColor,
     fontSize: 28
   },
   touchableHighlight: {

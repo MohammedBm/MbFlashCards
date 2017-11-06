@@ -61,7 +61,7 @@ export default connect(mapStateToProps)(DeckScreen)
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.darkBlue,
+    backgroundColor: color.mainBackground,
     padding: 5,
     justifyContent: 'space-between',
     alignItems: 'stretch'
@@ -74,11 +74,11 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 28,
-    color: color.grey
+    color: color.textBlue
   },
   cardCountText: {
     fontSize: 18,
-    color: color.grey
+    color: color.textBlue
   },
   cardCountNumber: {
     fontSize: 20,

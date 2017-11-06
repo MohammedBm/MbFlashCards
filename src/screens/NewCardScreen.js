@@ -35,7 +35,7 @@ class NewCardScreen extends Component {
 
     return (
       <KeyboardAwareScrollView
-        style={{ backgroundColor: color.darkBlue }}
+        style={{ backgroundColor: color.mainBackground }}
         contentContainerStyle={styles.wrapper}
         resetScrollToCoords={{ x: 0, y: 0 }}
       >
@@ -76,7 +76,7 @@ export default connect(null, { addCardToDeck })(NewCardScreen)
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: color.darkBlue,
+    backgroundColor: color.mainBackground,
     padding: 30,
     justifyContent: 'center',
     alignItems: 'stretch'
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 28,
     paddingBottom: 5,
-    color: color.lightBlue,
+    color: color.mainBackground,
     backgroundColor: 'transparent'
   },
   inputWrapper: {
@@ -93,14 +93,14 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 24,
     paddingBottom: 10,
-    color: color.grey
+    color: color.textBlue
   },
   input: {
     fontSize: 20,
     borderRadius: 5,
     paddingVertical: 7.5,
     paddingHorizontal: 15,
-    backgroundColor: color.darkGrey,
-    color: color.grey
+    backgroundColor: color.lightGrey,
+    color: color.textBlue
   }
 })
