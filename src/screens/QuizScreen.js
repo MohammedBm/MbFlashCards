@@ -19,7 +19,7 @@ class QuizScreen extends Component {
   static propTypes = {
     navigation: PropTypes.object.isRequired
   }
-  
+
   state = { ...defaultState }
 
   showAnswer = () => {
@@ -81,8 +81,8 @@ class QuizScreen extends Component {
                   </Text>
                 </View>
                 <View style={styles.buttonWrapper}>
-                  <SecondaryButton onPress={this.reset} title='Start Again' />
-                  <MainButton onPress={this.goToDeck} title='Got to Deck' />
+                  <SecondaryButton onPress={this.reset} icon={'repeat'} title='Start Again' />
+                  <MainButton onPress={this.goToDeck} icon={'bars'} title='View Deck' />
                 </View>
               </View>
             )
@@ -97,7 +97,7 @@ class QuizScreen extends Component {
                     <Text style={styles.message}>{question}</Text>
                   </View>
                 </View>
-                <MainButton onPress={this.showAnswer} title='Show Answer' />
+                <MainButton onPress={this.showAnswer} icon={'eye'} title='Show Answer' />
               </View>
             )
           } else if (side === 'back') {
@@ -112,8 +112,8 @@ class QuizScreen extends Component {
                   </View>
                 </View>
                 <View style={styles.buttonWrapper}>
-                  <SecondaryButton onPress={this.next} title='Incorrect' />
-                  <MainButton onPress={this.addPoints} title='Correct' />
+                  <SecondaryButton onPress={this.next} icon={'times '} title='Incorrect' />
+                  <MainButton onPress={this.addPoints} icon={'check'} title='Correct' />
                 </View>
               </View>
             )

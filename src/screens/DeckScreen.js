@@ -37,12 +37,12 @@ class DeckScreen extends React.Component {
         <View style={styles.buttonWrapper}>
           <SecondaryButton
             title={'Add Card'}
-            icon={'vcard-o'}
+            icon={'plus'}
             onPress={navigateToNewCard}
           />
           <MainButton
             title={'Start Quiz'}
-            icon={'rocket'}
+            icon={'play'}
             onPress={navigateToQuiz}
             disabled={disabled}
           />

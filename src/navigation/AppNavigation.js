@@ -24,7 +24,7 @@ const AppNavigation = TabNavigator(
         title: 'Add Deck',
         tabBarLabel: 'Add Deck',
         tabBarIcon: ({tintColor}) => (
-          <FontAwesome name='pencil' size={30} color={tintColor} />
+          <FontAwesome name='pencil-square-o' size={30} color={tintColor} />
         )
       }
     },
