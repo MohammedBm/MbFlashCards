@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { View, FlatList, StyleSheet } from 'react-native'
+import { View, FlatList, StyleSheet, Text } from 'react-native'
 import DeckView from '../components/DeckView'
 import { connect } from 'react-redux'
 import { color } from '../utils/colors'

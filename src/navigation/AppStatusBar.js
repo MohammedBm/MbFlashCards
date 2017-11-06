@@ -12,7 +12,7 @@ class AppStatusBar extends Component {
           height: Constants.statusBarHeight
         }}
       >
-        <StatusBar barStyle='light-content' />
+        <StatusBar barStyle='dark-content' />
       </View>
     )
   }

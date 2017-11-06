@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Text, View, TouchableHighlight, StyleSheet } from 'react-native'
+import { Text, View, TouchableOpacity, StyleSheet } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import { color } from '../utils/colors'
 
@@ -9,7 +9,7 @@ export class MainButton extends Component {
   render() {
     const { icon, title, onPress, ...props } = this.props
     return (
-      <TouchableHighlight style={styles.wrapper} onPress={onPress} {...props}>
+      <TouchableOpacity style={styles.wrapper} onPress={onPress} {...props}>
         <View style={[styles.button, styles.mainButton]}>
           {icon != null && (
             <FontAwesome
@@ -20,7 +20,7 @@ export class MainButton extends Component {
           )}
           <Text style={styles.mainButtonText}>{title}</Text>
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     )
   }
 }
@@ -30,7 +30,7 @@ export class SecondaryButton extends Component {
   render() {
     const { icon, title, onPress, ...props } = this.props
     return (
-      <TouchableHighlight style={styles.wrapper} onPress={onPress} {...props}>
+      <TouchableOpacity style={styles.wrapper} onPress={onPress} {...props}>
         <View style={[styles.button, styles.buttonSecondary]}>
           {icon != null && (
             <FontAwesome
@@ -41,7 +41,7 @@ export class SecondaryButton extends Component {
           )}
           <Text style={styles.secondaryButtonText}>{title}</Text>
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     )
   }
 }
@@ -70,10 +70,10 @@ const styles = StyleSheet.create({
   },
   mainButtonIcon: {
     marginRight: 10,
-    color: color.blue
+    color: color.white
   },
   mainButtonText: {
-    color: color.blue
+    color: color.white
   },
   buttonSecondary: {
     backgroundColor: 'transparent'
