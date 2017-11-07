@@ -1,5 +1,5 @@
 # FlashCards: Udacity Project
-Flashcard brings your old method of stuyding to your phone. Now you can create your own quizes and test your kenwledge. This application give the user the ability to create thier own decks inside their decks the can create questions as a flashcards.
+Flashcard brings your old method of studying to your phone. Now you can create your quizzes and test your knowledge. This application gives the user the ability to build their decks inside their decks the can create questions as flashcards.
 ## Try it!
 
 This application currently work with IOS, andriod will be added later.
