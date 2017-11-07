@@ -27,8 +27,11 @@ This application currently work with IOS, andriod will be added later.
     npm start #or you can use `yarn start`
   ```
 
-
+You can also check the application on your phone using Expo application via this <a href='https://expo.io/@mohmedbm/MbFlashCards'>Link</a>
 #### Code Obtained from Other Sources or Resources 
 
+- <a href='https://github.com/expo/expo'> Expo </a>
+
+- <a href='https://github.com/facebook/react-native'>React-Native </a>
 
 - Icon: Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
